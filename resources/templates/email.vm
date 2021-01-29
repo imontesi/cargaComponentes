@@ -1,0 +1,29 @@
+<html>
+<body>
+    <h3>Actualización de Componentes</h3>
+    <hr/>
+    <table width="85%" align="center">
+    	<tr>
+    		<th align="left" width="50%">Fichero</th>
+    		<th align="left">Num. Líneas</th>
+    		<th align="left">OK</th>
+    	</tr>
+    	#foreach ($fichero in $ficheros)
+    	<tr>
+    		<td>$fichero.singleNombreFichero</td>
+    		<td>$fichero.totalLineas</td>
+    		<td>$fichero.lineasOk</td>
+    	</tr>
+    	#end
+    </table>
+    <hr/>
+    #if ($detalles.size() > 0)
+    <p>Se han encontrado los siguientes errores:</p>
+    <ul>
+    	#foreach ($lineaKo in $detalles)
+    	<li><b>$lineaKo.linea</b>:&nbsp;$lineaKo.message</li>
+    	#end
+    </ul>
+    #end
+</body>
+</html>
